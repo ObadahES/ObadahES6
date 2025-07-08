@@ -1,12 +1,17 @@
 from experta import *
 
 class State:
+
+    counter = 0
+
     def __init__(self, left_Side, right_Side, lamp_Side, time_past=0, parent=None):
         self.left_Side = left_Side
         self.right_Side = right_Side
         self.lamp_Side = lamp_Side
         self.time_Past = time_past
         self.parent = parent
+        self.id = State.counter
+        State.counter += 1
 
     def __eq__(self, other):
         return (
